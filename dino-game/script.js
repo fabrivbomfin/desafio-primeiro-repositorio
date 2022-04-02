@@ -3,7 +3,7 @@ const background = document.querySelector(".background")
 var position = 0;
 
 var isJumping = false;
-
+//Capturando o evento da tecla espaço!!
 function handleKeyUp(event) {
     if(event.keyCode === 32) {
         if(!isJumping) {
@@ -11,7 +11,7 @@ function handleKeyUp(event) {
         }
     }
 }
-
+//Função para fazer o dino pular!
 function jump() {
     
     isJumping = true;
@@ -37,15 +37,19 @@ function jump() {
     }, 20);
 }
 
+//Função para criar os cactus!!
 function createCactus() {
     const cactus = document.createElement('div');
+    //Definindo a posição dos cactus
     var cactusPosition = 1000;
     var randomTime = Math.random() * 6000;
 
+    //Criando cactus aleatoriamente
     cactus.classList.add('cactus');
     cactus.style.left = 1000 + 'px';
     background.appendChild(cactus);
 
+    //Criando movimento do cactus!!
     var leftInterval = setInterval(() => {
         if(cactusPosition < -60) {
             clearInterval(leftInterval);
